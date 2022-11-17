@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   # end
 
   def create
-    @posts = Post.create(content: params[:content])
-    redirect json:{ post: post }
+    post = Post.create(content: params[:content])
+    render json:{ post: post }
   end
 end
